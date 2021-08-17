@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iti_flutter/models/user.dart';
+import 'package:iti_flutter/sreens/map.dart';
 import 'package:iti_flutter/utils/utils.dart';
 import 'package:iti_flutter/widget/card_design.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -54,6 +55,11 @@ class UserDetails extends StatelessWidget {
                   launchURL("https://${user.website}");
                 },
               ),
+              MaterialButton(
+                  onPressed: (){
+                    pushPage(context , MapSample(userLocation: user.address.geo,));
+
+              }, child: Text('Go to map'))
             ],
           ),
         ),
